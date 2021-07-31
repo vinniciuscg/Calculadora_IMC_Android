@@ -6,87 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/caixaNota1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#8F939393"
-        android:hint="Nota 1"
-        android:inputType="text"
-        android:padding="20dp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+    <EditText
+        android:id="@+id/editTextAltura"
+        style="@style/caixaTXT"
+
+        android:layout_marginTop="128dp"
+        android:hint="Altura (Ex: 1.70m)"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultado" />
 
     <TextView
-        android:id="@+id/caixaNota2"
+        android:id="@+id/textViewResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="#8F939393"
-        android:hint="Nota 2"
-        android:inputType="text"
-        android:padding="20dp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caixaNota1"
-        app:layout_constraintVertical_bias="0.044" />
-
-    <TextView
-        android:id="@+id/caixaFaltas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="#8F939393"
-        android:hint="Nº de Faltas"
-        android:inputType="text"
-        android:padding="20dp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caixaNota2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/botaoCalcular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:width="200dp"
-        android:padding="15dp"
-        android:text="Consultar Situação"
-        app:backgroundTint="#455ACD"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="116dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="IMC"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caixaFaltas"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/caixaSituacao"
+    <EditText
+        android:id="@+id/editTextPeso"
+        style="@style/caixaTXT"
+        android:layout_marginTop="60dp"
+        android:hint="Peso (Ex: 80kg)"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAltura" />
+
+    <Button
+        android:id="@+id/buttonCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:width="300dp"
-        android:height="200dp"
-        android:gravity="center"
-        android:text=""
-        android:textColor="#F14848"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botaoCalcular"
-        app:layout_constraintVertical_bias="0.06" />
+        android:layout_marginTop="72dp"
+        android:text="Calcular"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPeso" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
